@@ -5,7 +5,7 @@ from sentry_sdk.integrations.django import DjangoIntegration
 
 
 
-ALLOWED_HOSTS = ['onlinehizmetiniz.com','127.0.0.1','3.8.95.33']
+ALLOWED_HOSTS = ['onlinehizmetiniz.com','127.0.0.1','54.172.1.200']
 
 
 
@@ -66,7 +66,7 @@ sentry_sdk.init(
 
 AWS_ACCESS_KEY_ID=env("ACCESS_KEY_ID")
 AWS_SECRET_ACCESS_KEY=env("SECRET_ACCESS_KEY")
-AWS_STORAGE_BUCKET_NAME="onlinehizmetinizbucket"
+AWS_STORAGE_BUCKET_NAME="onlinehizmetinizbucket1"
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 AWS_S3_OBJECT_PARAMETERS = {
     'CacheControl': 'max-age=86400',
