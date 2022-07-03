@@ -23,6 +23,7 @@ class Room(models.Model):
         else:
             return None
 
+
     def get_last_message(self):
         obj=Message.objects.filter(room_id=self.id).last()
         if obj:
