@@ -236,6 +236,7 @@ def activate(request, uidb64, token, backend='django.contrib.auth.backends.Model
 
 
 def register_patient(request):
+    
     type="Hasta"
     # if request.method == "GET":
     #     us=get_object_or_404(CustomUserModel,email="muhammetay651@gmail.com")
