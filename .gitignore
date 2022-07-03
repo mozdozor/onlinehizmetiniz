@@ -8,4 +8,3 @@ prod.sqlite3
 venv
 Pipfile
 Pipfile.lock
-migrations
