@@ -1,5 +1,5 @@
 # chat/consumers.py
-#from asyncio.windows_events import NULL
+
 import json
 from asgiref.sync import async_to_sync
 from channels.generic.websocket import WebsocketConsumer
@@ -269,7 +269,7 @@ class ChatConsumer(WebsocketConsumer):
             rooma=Room.objects.get(id=self.room_name)
             print("difference time")
             print(self.difference)
-            if rooma.totalDurationTime==None:
+            if rooma.totalDurationTime==None :
                 rooma.totalDurationTime=datetime.datetime.min.time()
                 rooma.save()
             rooma.totalDurationTime=(datetime.datetime.combine(datetime.date(1,1,1),rooma.totalDurationTime) + self.difference).time()

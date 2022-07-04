@@ -271,6 +271,7 @@ def register_patient(request):
             email = EmailMessage(
                 mail_subject, message, to=[to_email]
             )
+            
             email.send()
             return render(request, "email_not.html",{"note":"Mail adresinizden linke tıklayarak kaydınızı tamamlayınız","class_name":"fas fa-envelope"})
             # username = form.cleaned_data.get("email")
