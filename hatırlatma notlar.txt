@@ -16,6 +16,7 @@ constantly==15.1.0
 cryptography==35.0.0
 daphne==3.0.2
 defusedxml==0.7.1
+distlib==0.3.4
 Django==3.2.6
 django-allauth==0.46.0
 django-autoslug==1.9.8
@@ -28,6 +29,8 @@ django-recaptcha==2.0.6
 django-starfield==1.0.post2
 django-storages==1.12.3
 django-utils-six==2.0
+filelock==3.7.1
+gunicorn==20.1.0
 hiredis==2.0.0
 hyperlink==21.0.0
 idna==3.2
@@ -38,6 +41,7 @@ jmespath==1.0.0
 msgpack==1.0.2
 oauthlib==3.1.1
 Pillow==9.2.0
+platformdirs==2.5.2
 psycopg2-binary==2.9.3
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
@@ -61,4 +65,5 @@ Twisted==21.7.0
 txaio==21.2.1
 typing-extensions==3.10.0.2
 urllib3==1.26.7
+virtualenv==20.15.1
 zope.interface==5.4.0

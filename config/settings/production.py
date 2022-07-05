@@ -5,7 +5,7 @@ from sentry_sdk.integrations.django import DjangoIntegration
 
 
 
-ALLOWED_HOSTS = ['onlinehizmetiniz.com','127.0.0.1','54.172.1.200']
+ALLOWED_HOSTS = ['onlinehizmetiniz.com','www.onlinehizmetiniz.com','127.0.0.1','54.172.1.200']
 
 
 
