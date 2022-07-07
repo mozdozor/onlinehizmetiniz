@@ -5,6 +5,8 @@ from django.db import models
 
 
 
+
+
 class PageModel(models.Model):
     denemeColumn=models.CharField(max_length=500,blank=True,null=True) 
     meta_title=models.CharField(max_length=500,blank=True,null=True) 
