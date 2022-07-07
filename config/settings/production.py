@@ -13,6 +13,7 @@ ALLOWED_HOSTS = ['onlinehizmetiniz.com','www.onlinehizmetiniz.com','127.0.0.1','
 DEBUG = True
 
 
+
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
