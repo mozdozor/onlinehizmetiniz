@@ -10,7 +10,7 @@ ALLOWED_HOSTS = ['onlinehizmetiniz.com','www.onlinehizmetiniz.com','127.0.0.1','
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 
 # Password validation
