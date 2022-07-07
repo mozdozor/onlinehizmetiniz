@@ -1,5 +1,6 @@
+import sentry_sdk
 from .base import *
-
+from sentry_sdk.integrations.django import DjangoIntegration
 
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
@@ -34,3 +35,4 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+

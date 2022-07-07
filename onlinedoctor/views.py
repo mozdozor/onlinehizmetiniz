@@ -73,6 +73,7 @@ def user_is_patient_check(user):
 
 
 def index(request):
+ 
     # for i in CustomUserModel.objects.all():
     #     i.save()
     #Room.objects.get(id="715600ccc54746acb0bdedf2ec26a674").delete()

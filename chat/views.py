@@ -18,6 +18,7 @@ from onlinedoctor.views import deletedAppoitments
 
 @login_required(login_url="login")
 def indexChat(request):
+    
     other_user=""
     deletedAppoints=list()
     appointments=list()
