@@ -395,54 +395,39 @@ class TimeScheduleModel(models.Model):
         (60 , "60 dk"),
        
     )
-    doctor=models.ForeignKey(CustomUserModel,on_delete=models.CASCADE,related_name="timeschedules")  
-    patient=models.ForeignKey(CustomUserModel,on_delete=models.CASCADE,null=True,blank=True)  
-    duration=models.PositiveSmallIntegerField(choices=DURATION,default="None",blank=True,null=True)   
-    day=models.CharField(max_length=250,blank=True,null=True,default="")   
-    money=models.PositiveSmallIntegerField(blank=True,null=True,default=0)   
-    starting_time=models.CharField(max_length=250,default="",blank=True,null=True)  
-    finishing_time=models.CharField(max_length=250,default="",blank=True,null=True)
-    date=models.DateField(null=True)
-    is_paid=models.CharField(max_length=50,default="no")
-    meeting_method=models.CharField(max_length=50,default="ourSystem",blank=True,null=True)
-    status=models.CharField(max_length=100,default="pending")
+    # doctor=models.ForeignKey(CustomUserModel,on_delete=models.CASCADE,related_name="timeschedules")  
+    # patient=models.ForeignKey(CustomUserModel,on_delete=models.CASCADE,null=True,blank=True)  
+    # duration=models.PositiveSmallIntegerField(choices=DURATION,default="None",blank=True,null=True)   
+    # day=models.CharField(max_length=250,blank=True,null=True,default="")   
+    # money=models.PositiveSmallIntegerField(blank=True,null=True,default=0)   
+    # starting_time=models.CharField(max_length=250,default="",blank=True,null=True)  
+    # finishing_time=models.CharField(max_length=250,default="",blank=True,null=True)
+    # date=models.DateField(null=True)
+    # is_paid=models.CharField(max_length=50,default="no")
+    # meeting_method=models.CharField(max_length=50,default="ourSystem",blank=True,null=True)
+    # status=models.CharField(max_length=100,default="pending")
     
 
-    class Meta:
-        db_table="timeschedule"
-        verbose_name ="müsait zaman"  
-        verbose_name_plural ="müsait zamanlar"
+    # class Meta:
+    #     db_table="timeschedule"
+    #     verbose_name ="müsait zaman"  
+    #     verbose_name_plural ="müsait zamanlar"
 
-    def __str__(self):
-        return self.doctor.get_full_name()
-
-
-    def is_upcoming(self):
-        today=date.today()
-        if(self.date<today):
-            return True 
-        else:
-            return False
+    # def __str__(self):
+    #     return self.doctor.get_full_name()
 
 
-    
-    # def get_day_name(self):
-    #     a = calendar.day_name[self.date.weekday()]  
-    #     return a
-
-    
-    # def get_date(self):
-    #     day=getDayEnglish(self.day)
-    #     my_date = datetime.date.today()
-    #     a = calendar.day_name[self.date.weekday()]  
-    #     weekdays = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']
-    #     now = weekdays.index(a)
-    #     later = weekdays.index(day)
-    #     if later>=now:
-    #         date = my_date - timedelta(days= now - later)
+    # def is_upcoming(self):
+    #     today=date.today()
+    #     if(self.date<today):
+    #         return True 
     #     else:
-    #         date = my_date + timedelta(days= 6)
-    #     return date
+    #         return False
+
+
+  
+    
+    
 
 # class hakkimizdaModel(models.Model):
 #     yazi=models.TextField(
@@ -578,31 +563,31 @@ class IletisimModel(models.Model):
 
 class appointmentModel(models.Model): 
     doctor=models.ForeignKey(CustomUserModel,on_delete=models.CASCADE,related_name="appointmentsOfDoctor")  
-    patient=models.ForeignKey(CustomUserModel,on_delete=models.CASCADE,null=True,blank=True,related_name="appointmentsOfPatient")  
-    duration=models.PositiveSmallIntegerField()   
-    day=models.CharField(max_length=250)   
-    money=models.PositiveSmallIntegerField()   
-    starting_time=models.CharField(max_length=250)  
-    finishing_time=models.CharField(max_length=250)
-    meeting_method=models.CharField(max_length=50,default="ourSystem",blank=True,null=True)
-    date=models.DateField()
-    totalDuration=models.TimeField(blank=True,null=True)
+#     patient=models.ForeignKey(CustomUserModel,on_delete=models.CASCADE,null=True,blank=True,related_name="appointmentsOfPatient")  
+#     duration=models.PositiveSmallIntegerField()   
+#     day=models.CharField(max_length=250)   
+#     money=models.PositiveSmallIntegerField()   
+#     starting_time=models.CharField(max_length=250)  
+#     finishing_time=models.CharField(max_length=250)
+#     meeting_method=models.CharField(max_length=50,default="ourSystem",blank=True,null=True)
+#     date=models.DateField()
+#     totalDuration=models.TimeField(blank=True,null=True)
 
-    class Meta:
-        db_table="appointments"
-        verbose_name ="fatura"  
-        verbose_name_plural ="faturalar"
+#     class Meta:
+#         db_table="appointments"
+#         verbose_name ="fatura"  
+#         verbose_name_plural ="faturalar"
 
-    def __str__(self):
-        return self.doctor.get_full_name()
+#     def __str__(self):
+#         return self.doctor.get_full_name()
 
 
-    def is_upcoming(self):
-        today=date.today()
-        if(self.date<today):
-            return True 
-        else:
-            return False
+#     def is_upcoming(self):
+#         today=date.today()
+#         if(self.date<today):
+#             return True 
+#         else:
+#             return False
 
 
 
@@ -610,30 +595,30 @@ class appointmentModel(models.Model):
 
 class deletedAppointmentModel(models.Model): 
     doctor=models.ForeignKey(CustomUserModel,on_delete=models.CASCADE,related_name="deletedAppointmentsOfDoctor")  
-    patient=models.ForeignKey(CustomUserModel,on_delete=models.CASCADE,null=True,blank=True,related_name="deleetdAppointmentsOfPatient")  
-    duration=models.PositiveSmallIntegerField()   
-    day=models.CharField(max_length=250)   
-    money=models.PositiveSmallIntegerField()   
-    starting_time=models.CharField(max_length=250)  
-    finishing_time=models.CharField(max_length=250)
-    meeting_method=models.CharField(max_length=50,default="ourSystem",blank=True,null=True)
-    date=models.DateField()
+#     patient=models.ForeignKey(CustomUserModel,on_delete=models.CASCADE,null=True,blank=True,related_name="deleetdAppointmentsOfPatient")  
+#     duration=models.PositiveSmallIntegerField()   
+#     day=models.CharField(max_length=250)   
+#     money=models.PositiveSmallIntegerField()   
+#     starting_time=models.CharField(max_length=250)  
+#     finishing_time=models.CharField(max_length=250)
+#     meeting_method=models.CharField(max_length=50,default="ourSystem",blank=True,null=True)
+#     date=models.DateField()
 
-    class Meta:
-        db_table="deletedAppointments"
-        verbose_name ="silinenFatura"  
-        verbose_name_plural ="silinenFaturalar"
+#     class Meta:
+#         db_table="deletedAppointments"
+#         verbose_name ="silinenFatura"  
+#         verbose_name_plural ="silinenFaturalar"
 
-    def __str__(self):
-        return self.doctor.get_full_name()
+#     def __str__(self):
+#         return self.doctor.get_full_name()
 
 
-    def is_upcoming(self):
-        today=date.today()
-        if(self.date<today):
-            return True 
-        else:
-            return False
+#     def is_upcoming(self):
+#         today=date.today()
+#         if(self.date<today):
+#             return True 
+#         else:
+#             return False
 
 
 
