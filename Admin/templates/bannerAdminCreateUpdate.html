@@ -61,7 +61,7 @@
                                     {% if updateBanner %}
                                         action="{% url 'updateBannerModel' updateBanner %}"
                                     {% else %}
-                                        action="{% url 'createAlanYaziModel' %}"
+                                        action="{% url 'createBannerModel' %}"
                                     {% endif %}
                                          method="POST">
                                         {% csrf_token %}
