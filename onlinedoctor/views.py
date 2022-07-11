@@ -1644,7 +1644,7 @@ def contact(request):
                 form.cleaned_data["subject"]+" ( "+form.cleaned_data["fullName"]+" "+ form.cleaned_data["whoIs"]+" )",
                 form.cleaned_data["mesaj"]+"\n\n\n ( "+form.cleaned_data["email"]+" )",
                 form.cleaned_data["email"],
-                ["muhammetay651@gmail.com","muhammet19071340@gmail.com"],
+                ["muhammetay651@gmail.com","muhammet19071340@gmail.com","raistlinmajere36@gmail.com","umutdevrim62@outlook.com"],
             )
             messages.success(request,"Mesajınız başarıyla tarafımıza iletildi.En kısa sürede sizinle iletişime geçilecektir.Teşekkür ederiz.")
             return redirect("contact")
