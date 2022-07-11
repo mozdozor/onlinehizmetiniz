@@ -176,6 +176,7 @@ def register_doctor(request):
                 messages.error(request,"Yüklediğiniz dosya boyutu en fazla 10 mb olmalıdır.")
                 return render(request, "register.html",{"form":form,"type":type})
             data.is_doctor=True
+            data.image="avatar/no-avatar.png"
             data.username= form.cleaned_data.get("email")
             data.is_active = False   
             data.none_average_star=5
@@ -255,7 +256,7 @@ def register_patient(request):
             return render(request, "register.html",{"form":form,"type":type})
         if recaptcha_response_result is True and form.is_valid():
             data=form.save(commit=False)
-          #  data.image="avatar/no-avatar.png"
+            data.image="avatar/no-avatar.png"
             data.is_patient=True
             data.username= form.cleaned_data.get("email")
             data.is_active = False
