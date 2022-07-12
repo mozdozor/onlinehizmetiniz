@@ -567,6 +567,7 @@ def showUserProfileSettings(request):
     }                      
     return render(request,"profile-settings.html",context)
     
+    
 
 
 
