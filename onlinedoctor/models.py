@@ -19,6 +19,7 @@ from django.core.files.storage import default_storage as storage
 
 
 
+
 class bannerModel(models.Model):
     top_title=models.CharField(
         max_length=250,

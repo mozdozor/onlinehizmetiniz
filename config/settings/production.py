@@ -16,6 +16,10 @@ DEBUG = True
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 524ac2206fa60bcce25380c5b4d57e8a99ed6dc7
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
