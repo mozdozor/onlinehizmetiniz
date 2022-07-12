@@ -567,10 +567,7 @@ def showUserProfileSettings(request):
     }                      
     return render(request,"profile-settings.html",context)
     
-<<<<<<< HEAD
-=======
-    
->>>>>>> 524ac2206fa60bcce25380c5b4d57e8a99ed6dc7
+
 
 
 
