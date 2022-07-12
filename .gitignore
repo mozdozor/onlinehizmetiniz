@@ -8,3 +8,4 @@ prod.sqlite3
 venv
 Pipfile
 Pipfile.lock
+ssh.txt

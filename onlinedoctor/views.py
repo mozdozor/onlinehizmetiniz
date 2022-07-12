@@ -1020,8 +1020,6 @@ def schedule(request):
 
 
 
-
-
 @login_required(login_url="login")
 @user_passes_test(user_is_doctor_check, login_url='login')
 def listWaitingComments(request):
