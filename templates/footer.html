@@ -51,7 +51,7 @@
 								<div class="footer-widget footer-menu">
 									<h2 class="footer-title">Danışan İçin</h2>
 									<ul>
-										<li><a target="_blank" href="{% url 'showAllDoctors' %}"><i class="fas fa-angle-double-right"></i> Doktor Ara</a></li>
+										<li><a target="_blank" href="{% url 'showAllDoctors' %}"><i class="fas fa-angle-double-right"></i> Psikolog Ara</a></li>
 										<li><a target="_blank" href="{% url 'login' %}"><i class="fas fa-angle-double-right"></i> Giriş</a></li>
 										<li><a target="_blank" href="{% url 'register_patient' %}"><i class="fas fa-angle-double-right"></i> Kayıt</a></li>
 										<li><a target="_blank" href="{% url 'showAllDoctors' %}"><i class="fas fa-angle-double-right"></i> Randevu Al</a></li>
@@ -70,7 +70,7 @@
 							
 								<!-- Footer Widget -->
 								<div class="footer-widget footer-menu">
-									<h2 class="footer-title">Doktorlar İçin</h2>
+									<h2 class="footer-title">Psikologlar İçin</h2>
 									<ul>
 										<li><a href="
 										{% if request.user.is_authenticated and request.user.is_doctor %}
@@ -92,7 +92,7 @@
 										{% else %}
 											{% url 'login' %}
 										{% endif %}
-											"><i class="fas fa-angle-double-right"></i> Doktor Menüsü</a></li>
+											"><i class="fas fa-angle-double-right"></i> Psikolog Menüsü</a></li>
 									</ul>
 								</div>
 								<!-- /Footer Widget -->

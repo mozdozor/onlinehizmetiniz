@@ -534,9 +534,9 @@ class logoModel(models.Model):
 class IletisimModel(models.Model):
     DURATION = (
         ("nobody" , "Lütfen kim olduğunuzu belirtiniz"),
-        ("Ben bir doktorum ve sitenize üyeyim" , "Ben bir doktorum ve sitenize üyeyim"),
-        ("Ben bir doktorum ancak sitenize üye değilim" , "Ben bir doktorum ancak sitenize üye değilim"),
-        ("Hastayım/Ziyaretçiyim" , "Hastayım/Ziyaretçiyim"), 
+        ("Ben bir psikologum ve sitenize üyeyim" , "Ben bir psikologum ve sitenize üyeyim"),
+        ("Ben bir psikologum ancak sitenize üye değilim" , "Ben bir psikologum ancak sitenize üye değilim"),
+        ("Danışanım/Ziyaretçiyim" , "Danışanım/Ziyaretçiyim"), 
         ("Medya ve İşbirliği" , "Medya ve İşbirliği"),
        
     )
