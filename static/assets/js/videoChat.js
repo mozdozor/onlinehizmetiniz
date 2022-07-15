@@ -1,6 +1,6 @@
 "use strict";
 
-
+(window.location.protocol === 'https:' ? 'wss' : 'ws') + '://';
 let otherUser=JSON.parse(document.getElementById('other_user_slug').textContent);
 let chatPart=document.getElementById("chatPart");
 let videoCallPart=document.getElementById("videoCallPart");
@@ -80,7 +80,7 @@ function connectSocket() {
   
 
     callSocket = new WebSocket(
-        'wss://'
+        'ws://'
         + window.location.host
         + '/ws/call/'
     );
