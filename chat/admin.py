@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from chat.models import peerInformations
+from chat.models import Room, peerInformations
 
 # Register your models here.
 
@@ -8,3 +8,4 @@ from chat.models import peerInformations
 
 
 admin.site.register(peerInformations)
+admin.site.register(Room)

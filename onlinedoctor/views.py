@@ -1942,9 +1942,9 @@ def acceptAppointment(request,pk):              #doktora ve hastaya mail at onay
         
     Room.objects.create(first_user=timeSchedule.doctor,second_user=timeSchedule.patient,appointment=newAppointment)    #ödeme yapıldıktan sonra iki kullanıcı arasında oda oluştur
     messages.success(request,'Randevunuzu başarıyla kabul ettiniz!')
-    message=" tarihli randevunuz doktorunuz tarafından onaylanmıştır.Lütfen randevu saatinden 5 dk öncesine kadar sistemde hazır bekleyiniz."
+    message=" tarihli randevunuz psikoloğunuz tarafından onaylanmıştır.Lütfen randevu saatinden 5 dk öncesine kadar sistemde hazır bekleyiniz."
     send_mail(
-        "Randevunuz doktorunuz tarafından onaylanmıştır."+" ( "+timeSchedule.patient.get_full_name()+" "+ " )",
+        "Randevunuz psikoloğunuz tarafından onaylanmıştır."+" ( "+timeSchedule.patient.get_full_name()+" "+ " )",
         str(timeSchedule.date)+" ("+timeSchedule.starting_time+"-"+timeSchedule.finishing_time+")"+message+"\n\n\n",
         footerModel.objects.first().email,
         [timeSchedule.patient.email,],
@@ -1968,7 +1968,7 @@ def deleteAppointment(request,pk):                  #burada ödemeyi tekrar kull
         date=timeSchedule.date,meeting_method=timeSchedule.meeting_method)
     
     messages.error(request,'Randevuyu reddettiniz.')
-    message=" tarihli randevunuz doktorunuz tarafından onaylanmadı.Ödediğiniz seans ücreti sizinle iletişime geçilip tarafınıza iletilecektir.İlginiz için teşekür ederiz."
+    message=" tarihli randevunuz psikoloğunuz tarafından onaylanmadı.Ödediğiniz seans ücreti sizinle iletişime geçilip tarafınıza iletilecektir.İlginiz için teşekür ederiz."
     send_mail(
         "Randevunuz Onaylanamadı"+" ( "+timeSchedule.patient.get_full_name()+" "+ " )",
         str(timeSchedule.date)+" ("+timeSchedule.starting_time+"-"+timeSchedule.finishing_time+")"+message+"\n\n\n",

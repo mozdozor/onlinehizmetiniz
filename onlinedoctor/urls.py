@@ -21,8 +21,8 @@ from .views import (
 
 urlpatterns = [
     path('',index,name="index"),
-    path('doktor-kaydi',register_doctor,name="register_doctor"),
-    path('hasta-kaydi',register_patient,name="register_patient"),
+    path('psikolog-kaydi',register_doctor,name="register_doctor"),
+    path('danisan-kaydi',register_patient,name="register_patient"),
     path('giris',loginindex,name="login"),
     path('cikis',logoutindex,name="logout"),
     path('doktor-profil-ayarlari',showDoctorProfileSettings,name="showDoctorProfileSettings"),

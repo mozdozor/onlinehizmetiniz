@@ -131,6 +131,7 @@ function getBase64(file){
 
 
 function callAjax(){
+    console.log("callajaxdafunc");
     $.ajax({
         type : "GET",
         url : "get_user/"+roomName,
@@ -139,6 +140,7 @@ function callAjax(){
             
         },
         success : function(data) {
+            console.log("başarılıcallajaxfun");
             document.getElementById('other_user_slug').textContent=data.slug;
             otherUserPeerId=data.otherUserPeerId;
             document.getElementById('nameContent').textContent=data.second_user_name;
@@ -531,7 +533,6 @@ function runChatUser(id,username){
 
 //var appointmentStartTime = appointmentStartTime;
 function setTime() {
-    console.log("set time fonkdaaaaaaaaaaaaaa");
     ++appointmentStartTime;
     let seconds = pad(appointmentStartTime % 60);
     let minute = pad(parseInt(appointmentStartTime / 60));

@@ -130,7 +130,7 @@ def createMessage(request,slug,room,message):
 
 def get_user(request,room_id):
     # print(request.GET)
-    # print("get user")
+    print("get user")
     if request.method=='GET' and request.is_ajax():
         second_user=""
         otherUserPeerId=""
@@ -139,6 +139,7 @@ def get_user(request,room_id):
             request.user.online="online"
             request.user.save()
         room=get_object_or_404(Room,id=room_id)
+        print(room.first_user)
         appo=appointmentModel.objects.get(id=room.appointment.id)
         start_time = datetime.datetime.strptime(appo.starting_time, '%H:%M')
         start_time=start_time.time()
@@ -152,22 +153,22 @@ def get_user(request,room_id):
         if request.user.is_doctor:
             user=room.second_user
             otherUserFullName=user.get_full_name()
-            peerUser=get_object_or_404(peerInformations,user=user)
-            if peerUser:
-                pass
-            else:
-                peerUser=peerInformations.objects.create(user=user)
-            otherUserPeerId=peerUser.peerId
+            # peerUser=get_object_or_404(peerInformations,user=user)
+            # if peerUser:
+            #     pass
+            # else:
+            #     peerUser=peerInformations.objects.create(user=user)
+            # otherUserPeerId=peerUser.peerId
             second_user=room.second_user.get_doctor_name()
         elif request.user.is_patient:
             user=room.first_user
             otherUserFullName=user.get_doctor_name()
-            peerUser=get_object_or_404(peerInformations,user=user)
-            if peerUser:
-                pass
-            else:
-                peerUser=peerInformations.objects.create(user=user)
-            otherUserPeerId=peerUser.peerId
+            # peerUser=get_object_or_404(peerInformations,user=user)
+            # if peerUser:
+            #     pass
+            # else:
+            #     peerUser=peerInformations.objects.create(user=user)
+            # otherUserPeerId=peerUser.peerId
             second_user=room.first_user.get_full_name()
 
         if user.online == "online":
@@ -180,7 +181,7 @@ def get_user(request,room_id):
                 "second_user_name":second_user,
                 "image":user.image.url,
                 "slug":user.slug,
-                "otherUserPeerId":otherUserPeerId,
+                "otherUserPeerId":"otherUserPeerId",    #burayı değiştirdimmm
                 # "messages":list(Message.objects.filter(room_id=room_id).all().values()),
                 "className":className,
                 "otherUserFullName":otherUserFullName,

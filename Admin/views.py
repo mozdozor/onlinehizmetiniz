@@ -56,7 +56,7 @@ def indexAdmin(request):
     data.append(doktorKazanc)
     data.append(komisyon)
     data.append(0)
-    labels=["Doktor Kazancı","Sizin Kazancınız","Diğer"]
+    labels=["Psikolog Kazancı","Sizin Kazancınız","Diğer"]
 
 
     doctors=CustomUserModel.objects.filter(is_doctor=True,doctor_okey=True,is_active=True).order_by("average_star")[:5]
@@ -179,14 +179,14 @@ def acceptWatiingDoctor(request,slug):
     doctor.is_active=True           #biz onaylarsak mail adreside otomatik onaylanmış oluyor
     doctor.doctor_okey=True
     doctor.save()
-    mail_subject = 'Doktor hesabınız aktif edildi.'
+    mail_subject = 'Psikolog hesabınız aktif edildi.'
     to_email = doctor.email
     message="Hesabınız yöneticimiz tarafından aktif edilmiştir.Sistemimizi kullanmaya başlayabilirsiniz."
     email = EmailMessage(
         mail_subject, message, to=[to_email]
     )
     email.send()
-    messages.success(request,"Doktor başarıyla kaydedilmiştir")
+    messages.success(request,"Psikolog başarıyla kaydedilmiştir")
     return redirect("listWaitingDoctors") 
 
 
@@ -598,7 +598,7 @@ def updateDoctorFeatureIndexAdmin(request):
         form = doctorFeatureIndexModelForm(request.POST or None,request.FILES or None,instance=feature)		
         if form.is_valid():
             form.save()
-            messages.success(request,'Doktor özellikleri yazı ve image kısmı başarıyla güncellendi')
+            messages.success(request,'Psikolog özellikleri yazı ve image kısmı başarıyla güncellendi')
             return redirect("updateDoctorFeatureIndexAdmin")
         else:
             messages.error(request,"LÜtfen formu gerektiği gibi doldurunuz")
