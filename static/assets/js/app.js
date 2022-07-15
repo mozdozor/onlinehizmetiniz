@@ -238,6 +238,8 @@ function connect(){
         fetchMessages();
     };
 
+    
+
 
 
 function writeTyping(data){
