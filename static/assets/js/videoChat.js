@@ -82,7 +82,7 @@ function connectSocket() {
     callSocket = new WebSocket(
         'wss://'
         + window.location.host
-        + '/wss/call/'
+        + '/ws/call/'
     );
 
     callSocket.onopen = event => {
