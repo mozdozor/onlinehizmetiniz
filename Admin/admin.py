@@ -5,5 +5,6 @@ from .models import bottomMenuModel, topMenuModel
 
 
 
+
 admin.site.register(topMenuModel)
 admin.site.register(bottomMenuModel)

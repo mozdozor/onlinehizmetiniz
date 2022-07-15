@@ -229,7 +229,7 @@ function connect(){
     chatSocket = new WebSocket(
         'wss://'
         + window.location.host
-        + '/ws/chat/'
+        + '/wss/chat/'
         + roomName
         + '/'
     );
@@ -238,7 +238,7 @@ function connect(){
         fetchMessages();
     };
 
-    
+
 
 
 
