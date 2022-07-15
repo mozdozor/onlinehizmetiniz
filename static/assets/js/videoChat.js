@@ -80,7 +80,7 @@ function connectSocket() {
   
 
     callSocket = new WebSocket(
-        'ws://'
+        'wss://'
         + window.location.host
         + '/ws/call/'
     );
