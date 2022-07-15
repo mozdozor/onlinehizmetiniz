@@ -127,20 +127,22 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 # Channels
-ASGI_APPLICATION = 'config.asgi.application'
-CHANNEL_LAYERS = {
-    "default": {
-        "BACKEND": "channels.layers.InMemoryChannelLayer"
-    }
-}
+ASGI_APPLICATION = 'config.asgi.application',
+
 # CHANNEL_LAYERS = {
-#     'default': {
-#         'BACKEND': 'channels_redis.core.RedisChannelLayer',
-#         'CONFIG': {
-#             "hosts": [('127.0.0.1', 6379)],           #alan adı eklenebilir daha sonra araştır burayı !!!!!!!!!!!!
-#         },
-#     },
+#     "default": {
+#         "BACKEND": "channels.layers.InMemoryChannelLayer"
+#     }
 # }
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('127.0.0.1', 6379)],           #alan adı eklenebilir daha sonra araştır burayı !!!!!!!!!!!!
+        },
+    },
+}
 
 
 
