@@ -29,7 +29,7 @@ application = get_asgi_application()
 ws_pattern = []
 
 application = ProtocolTypeRouter({
-    "https": get_asgi_application(), # aslında http yazıyor ama öyle çalışmıyor https yapınca çalışıyor yorumdaydı bu satır en son canlı testler yapılıyor
+    "http": get_asgi_application(), # aslında http yazıyor ama öyle çalışmıyor https yapınca çalışıyor yorumdaydı bu satır en son canlı testler yapılıyor
     "websocket" : AuthMiddlewareStack(URLRouter(
         chat.routing.websocket_urlpatterns
     ))
