@@ -237,9 +237,15 @@ function connect(){
     chatSocket.onopen=function (e){
         fetchMessages();
     };
+    chatSocket.onerror = function(evt) {
+        if (chatSocket.readyState == 1) {
+          console.log('ws normal error: ' + evt.type);
+        }
+      };
 
 
 
+      
 
 
 function writeTyping(data){
