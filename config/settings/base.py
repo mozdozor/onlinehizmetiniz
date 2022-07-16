@@ -127,8 +127,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 # Channels
-ASGI_APPLICATION = 'config.asgi.application',
-
+ASGI_APPLICATION = 'config.asgi.application'
 CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels.layers.InMemoryChannelLayer"

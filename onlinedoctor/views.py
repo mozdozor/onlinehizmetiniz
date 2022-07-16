@@ -132,7 +132,7 @@ def index(request):
         "alanlar":alanlar,
         "allFeatures":allFeatures,
         "featureDoctor":featureDoctor,
-        "doctors":CustomUserModel.objects.filter(is_doctor=True,doctor_okey=True),
+        "doctors":CustomUserModel.objects.filter(is_doctor=True,doctor_okey=True)[:20],
         "favorite_list":favorite_list,
         "meta_data":meta_data,
         "aciklamaYazisi":aciklamaYazisi,

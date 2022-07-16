@@ -88,6 +88,39 @@
 
 
 
+
+<!-- Popular Section -->
+<section class="section section-doctor">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-4 features-img">
+				<img src="https://via.placeholder.com/471x376" class="img-fluid" alt="Feature">
+			</div>
+			<div class="col-lg-8">
+
+				{% if aciklamaYazisi %}
+				<div class="section-header ">
+					<h2>{{aciklamaYazisi.top_title}}</h2>
+					<p>{{aciklamaYazisi.bottom_title}} </p>
+				</div>
+				<div class="about-content">
+					<p>{{aciklamaYazisi.yazi|safe|truncatechars:800}}</p>
+					<a href="{% url 'showAciklamaYazisi' %}">Daha Fazla Oku..</a>&emsp;
+				</div>
+				{% endif %}
+
+			</div>
+			
+		</div>
+	</div>
+</section>
+<!-- /Popular Section -->
+
+
+
+
+
+
 <!-- Clinic and Specialities -->
 <section class="section section-specialities">
 	<div class="container-fluid">
@@ -142,22 +175,8 @@
 <section class="section section-doctor">
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-lg-4">
-
-				{% if aciklamaYazisi %}
-				<div class="section-header ">
-					<h2>{{aciklamaYazisi.top_title}}</h2>
-					<p>{{aciklamaYazisi.bottom_title}} </p>
-				</div>
-				<div class="about-content">
-					<p>{{aciklamaYazisi.yazi|safe|truncatechars:360}}</p>
-					<a href="{% url 'showAciklamaYazisi' %}">Daha Fazla Oku..</a>&emsp;
-					<a href="{% url 'showAllDoctors' %}">Tüm Doktorlar</a>
-				</div>
-				{% endif %}
-
-			</div>
-			<div class="col-lg-8">
+		
+			<div class="col-lg-12">
 				<div class="doctor-slider slider">
 
 
@@ -208,11 +227,12 @@
 						</div>
 						<div class="pro-content">
 							<h3 class="title">
-								<a href="{% url 'showDoctorProfile' doctor.slug %}">{{doctor.unvan}}
-									{{doctor.get_full_name}}</a>
+								<p>{{doctor.unvan|truncatechars:16}}</p>
+								<a href="{% url 'showDoctorProfile' doctor.slug %}">
+									{{doctor.get_full_name|truncatechars:16}}</a>
 								<i class="fas fa-check-circle verified"></i>
 							</h3>
-							<p class="speciality">{{doctor.define_profession}}</p>
+							<p class="speciality">{{doctor.define_profession|truncatechars:32}}</p>
 							<div class="rating">
 
 								{% if doctor.average_star != 0 %}
@@ -268,7 +288,7 @@
 					</div>
 					<!-- /Doctor Widget -->
 					{% endfor %}
-
+					
 					{% endif %}
 
 
@@ -278,7 +298,15 @@
 
 
 				</div>
+				
+
 			</div>
+			<div class="about-content" style="margin-left: auto; 
+				margin-right: 0;">
+				<a href="{% url 'showAllDoctors' %}">Tüm Doktorlar</a>
+
+
+				</div>
 		</div>
 	</div>
 </section>
