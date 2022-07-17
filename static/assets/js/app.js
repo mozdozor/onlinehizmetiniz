@@ -227,7 +227,7 @@ function connect(){
    
    console.log(window.location.host) 
     chatSocket = new WebSocket(
-        'wss://'
+        'ws://'
         + window.location.host
         + '/ws/chat/'
         + roomName
