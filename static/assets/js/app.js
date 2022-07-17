@@ -226,6 +226,7 @@ function closingCode(){
 function connect(){
    
    console.log(window.location.host) 
+   
     chatSocket = new WebSocket(
         'wss://'
         + window.location.host
