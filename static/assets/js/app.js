@@ -1,4 +1,4 @@
-(window.location.protocol === 'https:' ? 'wss' : 'ws') + '://';
+(window.location.protocol === 'https:' ? 'ws' : 'ws') + '://';
 let roomName = JSON.parse(document.getElementById('room-name').textContent);
 let conversation=document.getElementById("conversation");
 let sendButton = document.getElementById("sendMessage");
