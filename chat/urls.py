@@ -14,4 +14,7 @@ urlpatterns = [
     path('get_user/<str:room_id>', get_user, name='get_user'),
     # path('updateOffline', updateOffline, name='updateOffline'),
     path('videoCall', videoCall, name='videoCall'),
+
+
+    
 ]
