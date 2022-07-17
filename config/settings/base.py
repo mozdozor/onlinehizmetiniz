@@ -131,8 +131,12 @@ ASGI_APPLICATION = 'config.asgi.application'
 CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels.layers.InMemoryChannelLayer"
+    },
+       'CONFIG': {
+            "hosts": [('127.0.0.1', 443)],           #alan adı eklenebilir daha sonra araştır burayı !!!!!!!!!!!!
+        },
     }
-}
+
 
 
 # CHANNEL_LAYERS = {
