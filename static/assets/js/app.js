@@ -1,4 +1,4 @@
-(window.location.protocol === 'https:' ? 'ws' : 'ws') + '://';
+(window.location.protocol === 'https:' ? 'wss' : 'ws') + '://';
 let roomName = JSON.parse(document.getElementById('room-name').textContent);
 let conversation=document.getElementById("conversation");
 let sendButton = document.getElementById("sendMessage");
@@ -227,7 +227,7 @@ function connect(){
    
    console.log(window.location.host) 
     chatSocket = new WebSocket(
-        'ws://'
+        'wss://'
         + window.location.host
         + '/ws/chat/'
         + roomName
